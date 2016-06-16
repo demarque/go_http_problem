@@ -30,3 +30,8 @@ func (problem *Problem) Generate() ([]byte, error) {
 
 	return data, nil
 }
+
+// GetMediaType return the media type string
+func (problem *Problem) GetMediaType() string {
+	return "application/api-problem+json"
+}
