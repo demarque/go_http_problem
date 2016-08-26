@@ -40,3 +40,8 @@ func (problem *Problem) GetMediaType() string {
 func (problem *Problem) Error() string {
 	return problem.title
 }
+
+// GetStatus return the status from the internal struct
+func (problem *Problem) GetStatus() int {
+	return problem.status
+}
