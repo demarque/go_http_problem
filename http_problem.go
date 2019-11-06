@@ -6,20 +6,20 @@ import "encoding/json"
 
 // Problem define the struct for http-problem spec
 type Problem struct {
-	typeProblem string `json:"type"`
-	title       string `json:"title"`
-	detail      string `json:"detail"`
-	status      int    `json:"status"`
+	TypeProblem string `json:"type"`
+	Title       string `json:"title"`
+	Detail      string `json:"detail"`
+	Status      int    `json:"status"`
 }
 
 // New create problem struct
 func New(problemType string, title string, detail string, status int) *Problem {
 	var problem Problem
 
-	problem.typeProblem = problemType
-	problem.title = title
-	problem.detail = detail
-	problem.status = status
+	problem.TypeProblem = problemType
+	problem.Title = title
+	problem.Detail = detail
+	problem.Status = status
 
 	return &problem
 }
@@ -38,10 +38,10 @@ func (problem *Problem) GetMediaType() string {
 
 // Error show error from title to adher to error interface
 func (problem *Problem) Error() string {
-	return problem.title
+	return problem.Title
 }
 
 // GetStatus return the status from the internal struct
 func (problem *Problem) GetStatus() int {
-	return problem.status
+	return problem.Status
 }
