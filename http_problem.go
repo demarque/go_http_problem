@@ -45,3 +45,13 @@ func (problem *Problem) Error() string {
 func (problem *Problem) GetStatus() int {
 	return problem.Status
 }
+
+// GetType return probleme type string
+func (problem *Problem) GetType() string {
+	return problem.TypeProblem
+}
+
+// GetDetail return probleme detail
+func (problem *Problem) GetDetail() string {
+	return problem.Detail
+}
