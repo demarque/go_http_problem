@@ -1,6 +1,9 @@
 package httpproblem
 
-import "encoding/json"
+import (
+	"encoding/json"
+	"fmt"
+)
 
 // https://tools.ietf.org/html/draft-ietf-appsawg-http-problem-00
 
@@ -38,7 +41,7 @@ func (problem *Problem) GetMediaType() string {
 
 // Error show error from title to adher to error interface
 func (problem *Problem) Error() string {
-	return problem.Title
+	return fmt.Sprintf("%v | %v", problem.Title, problem.Detail)
 }
 
 // GetStatus return the status from the internal struct
